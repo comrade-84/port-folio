@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+body{
+    background: #b4b4b4;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.container{
+    /* position: relative; */
+    width: 500px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+.nav{
+    width: 100%;
+    /* background-color: #c4c4c4; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    
+}
+.nav-links{
+    position: relative;
+    /* border: 2px solid red; */
+    height: 50px;
+}
+.nav label{
+    width: 100%;
+    cursor: pointer;
+    color: rgb(22, 34, 34);
+    z-index: 1;
+    font-weight: bold;
+    /* padding: 10px; */
+
+}
+
+.nav label i{
+    margin-right: 5px;
+}
+.slider{
+    width: 80px;
+    height: 35px;
+    background-color: rgb(19, 92, 92);
+    position: absolute;
+    top: 10%;
+    border-radius: 10px;
+    z-index: 0;
+    padding: 5px 15px;
+    transition: .3s all;
+}
+input[type="radio"]{
+    display: none;
+}
+#home:checked ~ .nav-links .slider{
+    left: 0px;
+}
+#blog:checked ~ .nav-links .slider{
+    left:80px;
+}
+#code:checked ~ .nav-links .slider{
+    left: 170px;
+}
+#news:checked ~ .nav-links .slider{
+    left: 260px;
+}
+#about:checked ~ .nav-links .slider{
+    left: 355px;
+}
+#home:checked ~ .nav-links .nav .home, #blog:checked ~ .nav-links .nav .blog, #code:checked ~ .nav-links .nav .code, #news:checked ~ .nav-links .nav .news, #about:checked ~ .nav-links .nav .about  {
+    color: #fff;
+}
+.sections h2{
+    color: red;
+    margin-top: 10px;
+}
+.home-section ,.blog-section,.code-section,.news-section,.about-section{
+    display: none;
+    /* transition: 2s; */
+}
+#home:checked ~ .sections .home-section{
+    display: block;
+}
+#blog:checked ~ .sections .blog-section{
+    display: block;
+}
+#code:checked ~ .sections .code-section{
+    display: block;
+}
+#news:checked ~ .sections .news-section{
+    display: block;
+}
+#about:checked ~ .sections .about-section{
+    display: block;
+}
+.codes{
+    /* border: 2px solid red; */
+    
+}
+.head{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    padding: 10px;
+}
+.head label{
+    background-color: #b4b4b4;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.head label:hover{
+    background-color: #df773b;
+}
+.head label i{
+    font-size: 30px;
+}
+.html , .css{
+    display: none;
+}
+#html:checked ~ .codes .head label:nth-child(1){
+    background-color: #ff5e02;
+}
+#css:checked ~ .codes .head label:nth-child(2){
+    background-color: #ff5e02;
+}
+#html:checked ~ .codes .codee-section .html{
+    display: block;
+}
+#css:checked ~ .codes .codee-section .css{
+    display: block;
+}
+
+
+
+
+
+
+.search{
+    background-color: #b4b4b4;
+    display: flex;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 25px;
+}
+.input input{
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 100%;
+   
+}
+.input{
+    width: 20%;
+    position: absolute;
+    right: 0;
+     transition: all 1s;
+}
+.search-btn{
+    background-color: #df773b;
+    /* padding: 10px; */
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    
+    /* transform: scale(20px 50px); */
+}
+.search-btn label{
+    cursor: pointer;
+}
+input[type="checkbox"]{
+    display: none;
+
+}
+#search:checked ~ .input {
+    width: 250px;
+}
